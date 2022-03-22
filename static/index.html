@@ -10,8 +10,12 @@
     <body>
         <main>
             <div class="editor"></div>
-            <div class="img" ondragover="(e)=>{e.preventDefault()}" ondrop="drop(event)"></div>
+            <div class="img"></div>
+            <div class="blocker"></div>
         </main>
+        <form action="" enctype="multipart/form-data">
+            <input type="file" name="img" id="img" hidden />
+        </form>
 
         <script src="main.js"></script>
     </body>

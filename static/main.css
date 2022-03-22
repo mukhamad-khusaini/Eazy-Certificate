@@ -6,19 +6,35 @@
 
 main {
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: baseline;
-    align-items: center;
 }
 
 main .editor {
     width: 20%;
     height: 100vh;
     background-color: rgb(38, 39, 39);
+    position: fixed;
 }
 
 main .img {
     width: 80%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 20%;
+}
+
+main .blocker {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    display: none;
+}
+
+.draging {
+    background-color: rgb(153, 153, 153);
 }
