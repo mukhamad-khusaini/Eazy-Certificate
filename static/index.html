@@ -9,9 +9,50 @@
     </head>
     <body>
         <main>
-            <div class="editor"></div>
+            <div class="editor">
+                <div class="position">
+                    <h2>Position</h2>
+                    <div>
+                        <label for="x">Sumbu Horizontal:</label>
+                        <input type="number" name="x" id="x" /><span>%</span>
+                    </div>
+                    <div>
+                        <label for="y">Sumbu Vertikal:</label>
+                        <input type="number" name="y" id="y" /><span>%</span>
+                    </div>
+                </div>
+                <div class="boxText">
+                    <h2>Text Box</h2>
+                    <div>
+                        <label for="lebar">Lebar:</label>
+                        <input type="number" name="lebar" id="lebar" /><span>px</span>
+                    </div>
+                    <div>
+                        <label for="tinggi">Tinggi:</label>
+                        <input type="number" name="tinggi" id="tinggi" /><span>px</span>
+                    </div>
+                </div>
+                <div class="text">
+                    <h2>Text</h2>
+                    <div>
+                        <label for="text">Text:</label>
+                        <input type="text" name="text" id="text" />
+                    </div>
+                    <div>
+                        <label for="file">File:</label>
+                        <div class="choose" onclick="show()">Choose File</div>
+                        <input type="file" name="file" id="file" accept="text/csv" hidden /><span>csv</span>
+                    </div>
+                </div>
+            </div>
             <div class="img"></div>
-            <div class="blocker"></div>
+            <div class="blocker">
+                <div class="pointer">
+                    <div class="dotContainer">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
         </main>
         <form action="" enctype="multipart/form-data">
             <input type="file" name="img" id="img" hidden />

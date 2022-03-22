@@ -6,33 +6,189 @@
 
 main {
     width: 100%;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main .editor {
-    width: 20%;
+    width: 30%;
     height: 100vh;
     background-color: rgb(38, 39, 39);
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+main .editor .position {
+    width: 100%;
+    height: 30vh;
+    color: rgb(182, 182, 182);
+}
+
+main .editor .position h2 {
+    margin-bottom: 1rem;
+}
+
+main .editor .position div {
+    margin-bottom: 0.5rem;
+}
+
+main .editor .position div span {
+    margin-left: 0.4rem;
+    font-size: 0.6rem;
+}
+
+main .editor .position div label {
+    font-size: 0.9rem;
+    display: block;
+}
+
+main .editor .position div input {
+    width: 50%;
+    padding: 2px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgb(54, 54, 54);
+}
+
+main .editor .position div input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+main .editor .boxText {
+    width: 100%;
+    height: 30vh;
+    color: rgb(182, 182, 182);
+}
+
+main .editor .boxText h2 {
+    margin-bottom: 1rem;
+}
+
+main .editor .boxText div {
+    margin-bottom: 0.5rem;
+}
+
+main .editor .boxText div span {
+    margin-left: 0.4rem;
+    font-size: 0.6rem;
+}
+
+main .editor .boxText div label {
+    font-size: 0.9rem;
+    display: block;
+}
+
+main .editor .boxText div input {
+    width: 50%;
+    padding: 2px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgb(54, 54, 54);
+}
+
+main .editor .boxText div input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+main .editor .text {
+    width: 100%;
+    height: 30vh;
+    color: rgb(182, 182, 182);
+}
+
+main .editor .text h2 {
+    margin-bottom: 1rem;
+}
+
+main .editor .text div {
+    margin-bottom: 0.5rem;
+}
+
+main .editor .text div label {
+    font-size: 0.9rem;
+    display: block;
+}
+
+main .editor .text div input {
+    width: 50%;
+    padding: 2px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: rgb(54, 54, 54);
+}
+
+main .editor .text div span {
+    margin-left: 0.2em;
+    font-size: 0.6rem;
+}
+
+main .editor .text div .choose {
+    display: inline-block;
+    margin-top: 0.4rem;
+    width: 50%;
+    height: 1rem;
+    font-size: 0.7rem;
+    background-color: rgb(61, 61, 61);
+    text-align: center;
+    cursor: pointer;
 }
 
 main .img {
-    width: 80%;
+    width: 70%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-left: 20%;
+    margin-left: 30%;
 }
 
 main .blocker {
-    width: 80%;
+    width: 70%;
     height: 100%;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 99;
     display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+main .blocker .pointer {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    background-color: aqua;
+    opacity: 0.6;
+}
+
+main .blocker .pointer .dotContainer {
+    display: inline-block;
+    position: absolute;
+    transform-origin: center center;
+    transform: translateX(0);
+    top: -0.6rem;
+    left: -5rem;
+    width: 10rem;
+    height: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+main .blocker .pointer .dotContainer span {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4px;
+    aspect-ratio: 1;
+    background-color: black;
+    border-radius: 50%;
 }
 
 .draging {
