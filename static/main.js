@@ -8,6 +8,8 @@ const dotC = document.querySelector(".blocker .dotContainer");
 const x = document.querySelector("#x");
 const y = document.querySelector("#y");
 
+y.disabled = true;
+
 // set default width & height
 let width = 0;
 let height = 0;
@@ -63,9 +65,9 @@ divImg.addEventListener("click", function () {
     inp.click();
 });
 
-divImg.addEventListener("change", function (e) {
-    console.log(this);
-});
+// divImg.addEventListener("change", function (e) {
+//     console.log(this);
+// });
 
 inp.addEventListener("change", function () {
     let file = new FileReader();
@@ -83,16 +85,60 @@ inp.addEventListener("change", function () {
     blocker.style.display = "flex";
 });
 
-let digit = [];
+let digitx = [];
+let digity = [];
 
 x.addEventListener("keydown", (e) => {
     if (e.code[0] === "D") {
-        digit.push(parseInt(e.key));
-        if (parseInt(digit.join("")) <= 200) {
-            dotC.style.transform = `translateX(${parseInt(digit.join(""))}%)`;
+        digitx.push(parseInt(e.key));
+        if ((parseInt(digitx.join("")) / 100) * width <= width) {
+            let str = dotC.style.transform;
+            let c = str.indexOf(" ");
+
+            if (c != -1) {
+                let ary = [...str]
+                    .map((e, i) => {
+                        if (i > c) {
+                            return e;
+                        }
+                    })
+                    .join("");
+                let newStr = `translateX(${(parseInt(digitx.join("")) / 100) * width}px) ${ary}`;
+
+                dotC.style.transform = newStr;
+            } else {
+                dotC.style.transform = `translateX(${(parseInt(digitx.join("")) / 100) * width}px)`;
+                y.disabled = false;
+            }
         }
     } else if (e.code === "Backspace") {
-        digit.pop();
+        digitx.pop();
+    }
+});
+
+y.addEventListener("keydown", (e) => {
+    if (e.code[0] === "D") {
+        digity.push(parseInt(e.key));
+        if ((parseInt(digity.join("")) / 100) * height <= height) {
+            let str = dotC.style.transform;
+            let c = str.indexOf(" ");
+
+            if (c != -1) {
+                let ary = [...str]
+                    .map((e, i) => {
+                        if (i < c) {
+                            return e;
+                        }
+                    })
+                    .join("");
+                let newStr = `${ary} translateY(${(parseInt(digity.join("")) / 200) * height}px)`;
+
+                dotC.style.transform = newStr;
+            }
+            dotC.style.transform += `translateY(${(parseInt(digity.join("")) / 200) * height}px)`;
+        }
+    } else if (e.code === "Backspace") {
+        digity.pop();
     }
 });
 

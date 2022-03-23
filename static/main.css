@@ -145,6 +145,7 @@ main .img {
     align-items: center;
     position: relative;
     margin-left: 30%;
+    padding: 5rem;
 }
 
 main .blocker {
@@ -171,7 +172,7 @@ main .blocker .pointer .dotContainer {
     display: inline-block;
     position: absolute;
     transform-origin: center center;
-    transform: translateX(0);
+    /* transform: translateX(0); */
     top: -0.6rem;
     left: -5rem;
     width: 10rem;
