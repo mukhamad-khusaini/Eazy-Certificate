@@ -7,6 +7,8 @@ const pointer = document.querySelector(".blocker .pointer");
 const dotC = document.querySelector(".blocker .dotContainer");
 const x = document.querySelector("#x");
 const y = document.querySelector("#y");
+const lebar = document.querySelector("#lebar");
+const tinggi = document.querySelector("#tinggi");
 
 y.disabled = true;
 
@@ -139,6 +141,30 @@ y.addEventListener("keydown", (e) => {
         }
     } else if (e.code === "Backspace") {
         digity.pop();
+    }
+});
+
+let digitl = [];
+lebar.addEventListener("keydown", (e) => {
+    if (e.code[0] === "D") {
+        digitl.push(parseInt(e.key));
+        if (parseInt(digitl.join("")) <= 400) {
+            dotC.style.width = `${parseInt(digitl.join(""))}px`;
+        }
+    } else if (e.code === "Backspace") {
+        digitl.pop();
+    }
+});
+
+let digitt = [];
+tinggi.addEventListener("keydown", (e) => {
+    if (e.code[0] === "D") {
+        digitt.push(parseInt(e.key));
+        if (parseInt(digitt.join("")) <= 100) {
+            dotC.style.height = `${parseInt(digitt.join(""))}px`;
+        }
+    } else if (e.code === "Backspace") {
+        digitt.pop();
     }
 });
 
