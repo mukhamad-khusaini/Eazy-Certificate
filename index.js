@@ -29,10 +29,12 @@ async function main() {
         });
 }
 
-main();
-
 app.get("/", (req, res) => {
     // calculatePXL("./iklan.png");
+});
+
+app.post("/generate", (req, res) => {
+    main();
 });
 
 app.listen(5000, () => {
